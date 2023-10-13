@@ -41,3 +41,4 @@ For all data, both static and real-time, I use [TrafikLab]("https://www.trafikla
 # Problems encountered
 * Some of the routes returned from TrafikLab had trips that were not following the same stop sequence. This was fixed by creating my own routes by simply grouping trips that had the same stop-sequence and then assigning a new route_id for each group.
 * Some routes contained the same stop twice which did not work with RAPTOR. This was fixed by customizing RAPTOR logic to identify stops using stop-sequence instead of stop_id.
+* To make it performant with Python. This was mainly fixed by making smart preprocessing of the data and then using mostly indexing within the algorithm.
