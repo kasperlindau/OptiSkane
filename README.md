@@ -6,7 +6,7 @@ Corresponding app: https://github.com/kasperlindau/OptiSkaneApp
 # About
 So I have never been really pleased with Skånetrafiken's current app. It often only suggests a few suboptimal journeys and is not very customizable. Another problem is that they use target-stops as destination, which limits the results even more. The reason for this is that they probably are aiming to distribute their travelers as well as possible on all of their available vehicles. Another reason may be that they need to adapt their service so it satisfies the average traveler. They also have to take computational power into account, as they deal with a lot of users each day, especially during rush hours.
 
-Modern problem requires modern solutions!! The only logical solution was to build an app myself.
+Modern problems require modern solutions!! The only logical solution was to build an app myself.
 
 # Specifications
 Firstly, I implemented the A* search algorithm. It produced good results but was waaaaaaay too slow.  
