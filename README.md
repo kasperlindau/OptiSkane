@@ -31,7 +31,15 @@ The only inputs needed to perform a search are: origin coordinates, destination 
 For providing an API, I use [FastiAPI](https://github.com/tiangolo/fastapi).
 For all data, both static and real-time, I use [TrafikLab]("https://www.trafiklab.se/").
 
-# Performance
+# Relative performance
+Measuring performance is quite difficult, as it depends on many factors.  
+Some hardware-related factors include: computer specs & background processes running.  
+Some software-related factors include: origin/destination as they affect the whole journey (traveling within a city has a lot of possible routes and stops, while in the countryside there are just a few for example), departure time (as there are fewer trips the later it is in the day) & MAX_WALK_RADIUS which limits the foot-paths.
+
+The results down below were run on an I7-6700K with quite many background processes & other applications running.    
+Search-wise, the origin was set between two cities (Malmö & Lund), departure time of 12:45 and MAX_WALK_RADIUS at 1km.
+
+![figures](https://github.com/kasperlindau/OptiSkane/assets/112329455/dae5cd2c-7737-44d8-8947-b93a7dd55885)
 
 # Further improvements
 * Foot-paths could be switched to GPS distance instead for more accurate results
@@ -42,3 +50,4 @@ For all data, both static and real-time, I use [TrafikLab]("https://www.trafikla
 * Some of the routes returned from TrafikLab had trips that were not following the same stop sequence. This was fixed by creating my own routes by simply grouping trips that had the same stop-sequence and then assigning a new route_id for each group.
 * Some routes contained the same stop twice which did not work with RAPTOR. This was fixed by customizing RAPTOR logic to identify stops using stop-sequence instead of stop_id.
 * To make it performant with Python. This was mainly fixed by making smart preprocessing of the data and then using mostly indexing within the algorithm.
+
