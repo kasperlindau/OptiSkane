@@ -37,3 +37,7 @@ For all data, both static and real-time, I use [TrafikLab]("https://www.trafikla
 * Foot-paths could be switched to GPS distance instead for more accurate results
 * Python could be switched to a more performant language to improve performance
 * Parallelization could be used when searching for journeys to improve performance
+
+# Problems encountered
+* Some of the routes returned from TrafikLab had trips that were not following the same stop sequence. This was fixed by creating my own routes by simply grouping trips that had the same stop-sequence and then assigning a new route_id for each group.
+* Some routes contained the same stop twice which did not work with RAPTOR. This was fixed by customizing RAPTOR logic to identify stops using stop-sequence instead of stop_id.
