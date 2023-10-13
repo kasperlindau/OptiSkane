@@ -1,8 +1,6 @@
 # OptiSkane
-Python backend for finding the best public transit journeys available at any given time within Skåne. 
-
-Also configurable for other transit regions supported by TrafikLabs API.
-
+Python backend for finding the best public transit journeys available at any given time within Skåne.  
+Also configurable for other transit regions supported by TrafikLabs API.  
 Corresponding app: https://github.com/kasperlindau/OptiSkaneApp
 
 # About
@@ -36,9 +34,6 @@ For all data, both static and real-time, I use [TrafikLab]("https://www.trafikla
 # Performance
 
 # Further improvements
-* Foot-paths could be GPS distance for more accurate results
+* Foot-paths could be switched to GPS distance instead for more accurate results
 * Python could be switched to a more performant language to improve performance
 * Parallelization could be used when searching for journeys to improve performance
-
-
-
