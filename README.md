@@ -4,7 +4,7 @@ Also configurable for other transit regions supported by TrafikLabs API.
 Corresponding app: https://github.com/kasperlindau/OptiSkaneApp
 
 # About
-So I have never been really pleased with Skånetrafiken's current app. It often only suggests a few suboptimal journeys and is not very customizable. Another problem is that they use target-stops as destination, which limits the results even more. The reason for this is that they probably are aiming to distribute their travelers as well as possible on all of their available vehicles. Another reason may be that they need to adapt their service so it satisfies the average traveler. They also have to take computational power into account, as they deal with a lot of users each day, especially during rush hours.
+So I have never been really pleased with Skånetrafiken's current app. It often only suggests a few suboptimal journeys and the search is not very customizable. Some possible reasons for this includes: they probably aim to distribute their traverlers as well as possible on all of their available vehicles, they need to adapt their services to the average traveler, and they need to take computational power into account as they deal with a lot of users each day (especially during rush hour).
 
 Modern problems require modern solutions!! The only logical solution was to build an app myself.
 
@@ -17,7 +17,7 @@ Foot-paths are currently estimated by:
 * Converting the distances to estimated time by WALK_SPEED (currently set to 5km/h) and penalizing it with a factor of 2
 
 A more accurate way would be to use real GPS routes instead of just the penalized linear distance.  
-The benefit of using a quite large MAX_WALK_RADIUS is that it can find faster routes. The downside is that it is much more computationally expensive.
+The benefit of using a quite large MAX_WALK_RADIUS is that it can find more journeys, which often are faster. The downside is that it is much more computationally expensive.
 
 The only inputs needed to perform a search are: origin coordinates, destination coordinates, and departure time. 
 * I start by finding starting-stops within the MAX_WALK_RADIUS from the origin coordinates
@@ -29,7 +29,7 @@ For providing an API, I use [FastiAPI](https://github.com/tiangolo/fastapi).
 For all data, both static and real-time, I use [TrafikLab]("https://www.trafiklab.se/").
 
 # Relative performance
-Measuring performance is quite difficult, as it depends on many factors.  
+Measuring performance is quite difficult, as it depends on many different factors.  
 Some hardware-related factors include: 
 * Computer specs
 * Background processes running
